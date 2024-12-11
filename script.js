@@ -9,6 +9,8 @@ async function getQuestions() {
     let arrOptionD = []
     let arrAnswer = []
 
+    let index = 0;
+
         let ranNum = Math.floor(Math.random() * 547)
 
         let question = ques[ranNum].question;
