@@ -26,6 +26,10 @@ body {
     cursor: pointer;
 }
 
+.start:hover {
+    background-color: rgb(149, 36, 255);
+}
+
 .quiz-Container {
     display: flex;
     flex-direction: column;
