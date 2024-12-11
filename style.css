@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    font-family: Fredoka, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(46, 46, 46);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    margin-top: 40px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(156, 49, 255);
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+.quiz-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 75vw;
+    border-radius: 15px;
+    background-image: linear-gradient(120deg, rgb(190, 190, 190), rgb(80, 80, 80));
+}
+
+.result {
+    font-size: larger;
+    padding: 7px;
+    color: rgb(68, 0, 255);
+}
+
+.options div {
+    margin: 20px 0;
+}
+
+.options div input,
+.options div label {
+    margin: 0 20px;
+    font-size: large;
+}
+
+input,
+.options label {
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    margin-top: 40px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(156, 49, 255);
+    color: white;
+    font-size: large;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(149, 36, 255);
+}
+
+.submitDiv {
+    text-align: center;
+}
+
+.answer {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .quiz-Container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .question {
+        margin: 0 20px;
+    }
+
+    .options div input,
+    .options div label {
+        margin: 0 20px;
+        font-size: 25px;
+    }
+
+    input[type="submit"] {
+        width: 50%;
+        height: 6vh;
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .start {
+        width: 50%;
+        height: 6vh;
+        font-size: 25px;
+    }
+
+    .result {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    h3 {
+        width: 85%;
+        text-align: center;
+        margin: auto;
+    }
+}
