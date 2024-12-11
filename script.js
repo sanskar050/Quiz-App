@@ -9,7 +9,6 @@ async function getQuestions() {
     let arrOptionD = []
     let arrAnswer = []
 
-    for (let index = 0; index <= 1; index++) {
         let ranNum = Math.floor(Math.random() * 547)
 
         let question = ques[ranNum].question;
@@ -42,8 +41,6 @@ async function getQuestions() {
         <div class="submitDiv"><input onclick="check()" type="submit"></div>
 
         <div class="answer">${arrAnswer[index]}</div>`
-    }
-
 }
 
 function check() {
@@ -53,6 +50,9 @@ function check() {
         if (e.checked) {
             if (e.value === ans) {
                 document.querySelector(".result").innerHTML = "Right Answer !"
+                setTimeout(() => {
+                    getQuestions()
+                }, 2000);
             }
             else {
                 document.querySelector(".result").innerHTML = "Wrong Answer, Try Again !"
