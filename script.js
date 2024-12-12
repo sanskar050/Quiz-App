@@ -50,7 +50,9 @@ function toggleStart() {
 
 function toggleSubmit() {
     document.querySelector(".submit").setAttribute("disabled", true)
+    document.querySelector(".end").setAttribute("disabled", true)
     document.querySelector(".submit").style.backgroundColor = "rgb(196, 135, 253)"
+    document.querySelector(".end").style.backgroundColor = "rgb(196, 135, 253)"
     getQuestions()
 }
 
@@ -62,7 +64,7 @@ function check() {
             if (e.value === ans) {
                 document.querySelector(".result").innerHTML = "Right Answer<br>Waiting For Next Question..."
                 countOfRightAns++
-                getQuestions()
+                toggleSubmit()
             }
             else {
                 document.querySelector(".result").innerHTML = "Wrong Answer, Try Again !"
