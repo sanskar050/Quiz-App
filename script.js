@@ -76,7 +76,7 @@ function end() {
     <div class="endDiv">
         <h2>Quiz Summary</h2>
         <div class="mT-20">
-        <div class="totalQ">Total Attempted Questions: ${countOfQ}</div>
+        <div class="totalQ">Total Questions Attempted: ${countOfQ}</div>
         <div class="rightAns">Right Answer Given: ${countOfRightAns}</div>
         </div>
     </div>`
