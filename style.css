@@ -133,6 +133,10 @@ input[type="submit"]:active, .end:active {
     margin: 8px;
 }
 
+.WrongAns {
+    margin: 6px;
+}
+
 @media only screen and (max-width: 700px) {
     .quiz-Container {
         width: 100%;
