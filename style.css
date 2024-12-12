@@ -84,6 +84,10 @@ input,
     cursor: pointer;
 }
 
+.question {
+    cursor: auto;
+}
+
 input[type="radio"]{
     accent-color: blue;
 }
