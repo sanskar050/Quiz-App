@@ -1,4 +1,4 @@
-let countOfQ = 0, countOfRightAns = 0;
+let countOfQ = 0, countOfRightAns = 0, countOfWrongAns = 0;
 
 async function getQuestions() {
     countOfQ++
@@ -66,6 +66,7 @@ function check() {
             }
             else {
                 document.querySelector(".result").innerHTML = "Wrong Answer, Try Again !"
+                countOfWrongAns++
             }
         }
     });
@@ -78,6 +79,7 @@ function end() {
         <div class="mT-20">
         <div class="totalQ">Total Questions Attempted: ${countOfQ}</div>
         <div class="rightAns">Right Answer Given: ${countOfRightAns}</div>
+        <div class="WrongAns">Wrong Answer Given: ${countOfWrongAns}</div>
         </div>
     </div>`
 }
