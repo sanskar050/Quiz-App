@@ -44,6 +44,7 @@ body {
     color: white;
     font-size: large;
     cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .start:hover {
@@ -87,9 +88,10 @@ input[type="radio"]{
     accent-color: blue;
 }
 
-input[type="submit"] {
+input[type="submit"], .end {
     margin-top: 40px;
-    padding: 12px 16px;
+    height: 5vh;
+    width: 8vw;
     border-radius: 10px;
     border: none;
     background-color: rgb(156, 49, 255);
@@ -98,20 +100,35 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, .end:hover {
+    background-color: rgb(149, 36, 255);
+    cursor: pointer;
+}
+
+input[type="submit"]:active, .end:active {
     background-color: rgb(149, 36, 255);
 }
 
-.submitDiv {
+.buttonDiv {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .answer {
     display: none;
+}
+
+.mT-20 {
+    margin-top: 30px;
+    font-size: large;
+}
+
+.rightAns {
+    margin: 8px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -130,9 +147,10 @@ input[type="submit"]:hover {
         font-size: 25px;
     }
 
-    input[type="submit"] {
+    input[type="submit"], .end {
         width: 50%;
         height: 6vh;
+        margin: 2px;
         font-size: 25px;
     }
 
@@ -144,6 +162,15 @@ input[type="submit"]:hover {
         width: 50%;
         height: 6vh;
         font-size: 25px;
+    }
+
+    .buttonDiv {
+        margin-top: 50px;
+        flex-direction: column;
+    }
+
+    .buttonDiv > * {
+        margin-top: 10px;
     }
 
     .result {
