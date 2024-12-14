@@ -8,7 +8,7 @@ async function getQuestions() {
     let data = await a.json()
 
     setTimeout(() => {
-        let ranNum = Math.floor(Math.random() * 547)
+        let ranNum = Math.floor(Math.random() * (data.length - 1))
 
         let question = data[ranNum].question;
 
