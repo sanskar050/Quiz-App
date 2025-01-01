@@ -1,4 +1,4 @@
-let countOfQ = 0, countOfRightAns = 0, countOfWrongAns = 0;
+let countOfQ = 0, countOfRightAns = 0, countOfWrongAns = 0, answer;
 
 async function getQuestions() {
     countOfQ++
@@ -7,17 +7,18 @@ async function getQuestions() {
     let a = await fetch("https://gist.githubusercontent.com/cmota/f7919cd962a061126effb2d7118bec72/raw/96ae8cbebd92c97dfbe53ad8927a45a28f8d2358/questions.json")
     let data = await a.json()
 
+    let ranNum = Math.floor(Math.random() * (data.length - 1))
+
+    let question = data[ranNum].question;
+
+    let optionA = data[ranNum].A
+    let optionB = data[ranNum].B
+    let optionC = data[ranNum].C
+    let optionD = data[ranNum].D
+
+    answer = data[ranNum].answer
+
     setTimeout(() => {
-        let ranNum = Math.floor(Math.random() * (data.length - 1))
-
-        let question = data[ranNum].question;
-
-        let optionA = data[ranNum].A
-        let optionB = data[ranNum].B
-        let optionC = data[ranNum].C
-        let optionD = data[ranNum].D
-
-        let answer = data[ranNum].answer
 
         document.querySelector(".quiz-Container").innerHTML = `
         <div class="loader"></div>
@@ -35,9 +36,7 @@ async function getQuestions() {
         <div class="buttonDiv">
         <input class="submit" onclick="check()" type="submit">
         <button class="end" onclick="end()">End</button>
-        </div>
-
-        <div class="answer">${answer}</div>`
+        </div>`
     }, 3000);
 }
 
@@ -58,10 +57,9 @@ function toggleSubmit() {
 
 function check() {
     btn = document.getElementsByName("option")
-    ans = document.querySelector(".answer").innerHTML
     btn.forEach(e => {
         if (e.checked) {
-            if (e.value === ans) {
+            if (e.value === answer) {
                 document.querySelector(".result").innerHTML = "Right Answer<br>Waiting For Next Question..."
                 countOfRightAns++
                 toggleSubmit()
